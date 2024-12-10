@@ -1,0 +1,209 @@
+/* Base Styling */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #000000;
+    color: #fdfdfd;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #30311b;
+    color: #f5f5f5;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+.nav-links a {
+    margin-left: 1.5rem;
+    text-decoration: none;
+    color: #9ed19d;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #eb300f;
+}
+
+/* Main Content */
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2.5rem;  /* Increased padding to make the container longer */
+    border-radius: 8px;
+    text-align: center;
+    min-height: 400px;  /* Make container taller */
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.5); /* Slight transparent background for contrast */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Home Section */
+.home-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.home-text {
+    flex: 1;
+    text-align: center;
+}
+
+.home-image img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #000;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ScrOll horizontal Section */
+.Thingy-gallery {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding: 1rem 0;
+    scrollbar-width: thin;
+    scrollbar-color: #bbafaf #999595;
+}
+
+.Thingy-gallery::-webkit-scrollbar {
+    height: 8px;
+}
+
+.Thingy-gallery::-webkit-scrollbar-thumb {
+    background: #000;
+    border-radius: 4px;
+}
+
+.Thingy-gallery::-webkit-scrollbar-track {
+    background: #f91515;
+}
+
+.Thingy-item {
+    flex: 0 0 auto;
+    width: 300px;
+    height: 250px;
+    border-radius: 50px;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+}
+
+.Thingy-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.Thingy-item:hover {
+    transform: scale(1.05);
+}
+
+/* Contact Section */
+.contact {
+    text-align: center;
+}
+
+.contact-image {
+    display: block;
+    margin: 0 auto 1.5rem;
+    max-width: 200px;
+    border-radius: 8px;
+    border: 2px solid #000;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 50%;
+    margin: 0 auto;
+}
+
+form input, form textarea, form button {
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #000;
+    border-radius: 5px;
+    width: 100%;
+}
+
+form button {
+    background-color: #39d612;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+/* Animation Background color */
+@keyframes gradientAnimation {
+    0% {
+        background: linear-gradient(45deg, #1e2a47, #4a90e2);
+    }
+    50% {
+        background: linear-gradient(45deg, #2c3e50, #2980b9);
+    }
+    100% {
+        background: linear-gradient(45deg, #1e2a47, #4a90e2);
+    }
+}
+
+body {
+    animation: gradientAnimation 10s infinite alternate;
+}
+
+/* Animation for fade*/
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Responsiveness */
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        margin-top: 0.5rem;
+    }
+
+    .nav-links a {
+        margin-left: 0;
+        margin-right: 1rem;
+    }
+
+    .home-content {
+        flex-direction: column;
+    }
+}
